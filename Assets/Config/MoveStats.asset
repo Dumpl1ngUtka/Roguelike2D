@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f38cea734665d94289a3908ae5ce208, type: 3}
   m_Name: MoveStats
   m_EditorClassIdentifier: 
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   MaxSpeed: 7
   Acceleration: 120
   GroundDeceleration: 60

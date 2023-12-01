@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B3F54876-5C18-47D5-E613-A1F2831B5F47}</ProjectGuid>
+    <ProjectGuid>{B0520B9C-3A33-092C-9C0F-819478A1FFCF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -76,12 +76,6 @@
     <Compile Include="Assets\Scripts\EnemyHitBox.cs" />
     <Compile Include="Assets\Scripts\Armor\HeavyArmor.cs" />
     <Compile Include="Assets\Scripts\Items\IItemForSecondHand.cs" />
-    <Compile Include="Assets\Scripts\State\State.cs" />
-    <Compile Include="Assets\Scripts\State\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\State\MoveState.cs" />
-    <Compile Include="Assets\Scripts\State\JumpState.cs" />
-    <Compile Include="Assets\Scripts\State\DodgeState.cs" />
-    <Compile Include="Assets\Scripts\State\BaseMoveState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
