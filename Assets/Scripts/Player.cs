@@ -1,7 +1,17 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public StateMachine MoveStateMachine;
+    public MoveState MoveState;
+    public JumpState JumpState;
+    public DodgeState DodgeState;
+    public PlayerInputSystem InputSystem;
+    public Rigidbody2D Rigidbody;
+    public CapsuleCollider2D Collider;
+
+
     [SerializeField] public PlayerParameters Parameters;
     [SerializeField] public LayerMask GroundLayer;
     public Condition MoveCondition;
@@ -15,7 +25,22 @@ public class Player : MonoBehaviour
         Dodge,
         Block,
     }
+    private void Awake()
+    {
+        InputSystem = new PlayerInputSystem();
+        Rigidbody = GetComponent<Rigidbody2D>();
+        Collider = GetComponent<CapsuleCollider2D>();
+    }
 
+    private void OnEnable()
+    {
+        InputSystem.Enable();
+    }
+
+    private void OnDisable()
+    {
+        InputSystem.Disable();
+    }
     public void ChangeCurrentCondition(ConditionType type)
     {
         switch (type)
@@ -30,5 +55,27 @@ public class Player : MonoBehaviour
                 CurrentCondition = BlockCondition;
                 break;
         }
+    }
+    private void Start()
+    {
+        MoveStateMachine = new StateMachine();
+
+        MoveState = new MoveState(this, MoveStateMachine);
+        JumpState = new JumpState(this, MoveStateMachine);
+        DodgeState = new DodgeState(this, MoveStateMachine);
+
+        MoveStateMachine.Initialize(MoveState);
+    }
+
+    private void Update()
+    {
+        MoveStateMachine.CurrentState.Input();
+
+        MoveStateMachine.CurrentState.LogicUpdate();
+    }
+
+    private void FixedUpdate()
+    {
+        MoveStateMachine.CurrentState.PhysicsUpdate();
     }
 }
