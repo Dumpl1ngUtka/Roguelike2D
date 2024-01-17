@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+
         _player = GetComponent<Player>();
         _parameters = _player.Parameters;
         _healthMax = _parameters.Health;

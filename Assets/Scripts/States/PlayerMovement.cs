@@ -14,25 +14,15 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInputSystem _inputSystem;
     private Player _player;
     private Condition _currentCondition => _player.CurrentCondition;
-    private MoveStats _stats => _player.Stats;
+    private PlayerParameters _stats => _player.Parameters;
 
-    private void Awake()
+    private void Start()
     {
-        _inputSystem = new PlayerInputSystem();
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _player = GetComponent<Player>();
         _player.ChangeCurrentCondition(Player.ConditionType.Move);
-    }
-
-    private void OnEnable()
-    {
-        _inputSystem.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _inputSystem.Disable();
+        _inputSystem = _player.InputSystem;
     }
 
     private void Update()

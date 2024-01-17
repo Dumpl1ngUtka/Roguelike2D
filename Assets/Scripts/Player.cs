@@ -1,19 +1,29 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public PlayerParameters Parameters;
-    [SerializeField] public LayerMask GroundLayer;
+    public PlayerParameters Parameters;
+    public LayerMask GroundLayer;
     public Condition MoveCondition;
     public Condition DodgeCondition;
     public Condition BlockCondition;
+    public PlayerInputSystem InputSystem { get; private set; }
     public Condition CurrentCondition { get; private set; }
-    public MoveStats Stats;
     public enum ConditionType
     {
         Move,
         Dodge,
         Block,
+    }
+
+    [SerializeField] private MenuController _menu;
+    private void Awake()
+    {
+        InputSystem = new PlayerInputSystem();
+        InputSystem.Enable();
+        InputSystem.UI.OpenSettings.performed += ctx => StartCoroutine(OpenMenu(MenuController.OpenType.Settings));
+        InputSystem.UI.OpenInventory.performed += ctx => StartCoroutine(OpenMenu(MenuController.OpenType.Inventory));
     }
 
     public void ChangeCurrentCondition(ConditionType type)
@@ -30,5 +40,14 @@ public class Player : MonoBehaviour
                 CurrentCondition = BlockCondition;
                 break;
         }
+    }
+
+    private IEnumerator OpenMenu(MenuController.OpenType type)
+    {
+        InputSystem.Disable();
+        _menu.Open(type);
+        while (_menu.IsOpen)
+            yield return new WaitForEndOfFrame();
+        InputSystem.Enable();
     }
 }

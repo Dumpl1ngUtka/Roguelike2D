@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class Armor : Item
 {
-    public string Name;
     [Range(0, 100)] public float BlockedDamagePercentage;
     public float MaxStrength;
     public float TimeToStrengthRestoration;

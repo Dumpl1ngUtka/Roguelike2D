@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f84a475f29d064fb6a9b6d250697e3, type: 3}
   m_Name: Shield1
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  Name: Shield
+  Weight: 1.45
