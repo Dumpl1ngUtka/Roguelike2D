@@ -73,8 +73,13 @@ public class PlayerMovement : MonoBehaviour
         else if (_playerInputDirection.x < 0)
             directionX = -_stats.DodgeSpeed;
         _movementDirection.x = directionX;
-        _movementDirection.y = 0;
-        yield return new WaitForSeconds(_stats.DodgeTime);
+        var timer = 0f;
+        while (timer < _stats.DodgeTime)
+        {
+            timer += Time.deltaTime;
+            _movementDirection.y = 0;
+            yield return null;
+        }
         _player.ChangeCurrentCondition(Player.ConditionType.Move);
     }
 

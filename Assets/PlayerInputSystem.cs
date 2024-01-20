@@ -62,6 +62,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TakeItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b6bde7c-99f7-4f72-9141-2600ceea3ec3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -185,6 +194,17 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e66b4a7-f2b1-4a78-8d73-055d80a5c335"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TakeItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -214,6 +234,42 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""name"": ""OpenInventory"",
                     ""type"": ""Button"",
                     ""id"": ""402a82f3-1d67-4b31-b060-a46d46351f3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChooseItem"",
+                    ""type"": ""Value"",
+                    ""id"": ""6fe10079-9a1d-4c11-8b4b-818a9198ed86"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChooseTab"",
+                    ""type"": ""Value"",
+                    ""id"": ""0f0d9cc1-6064-4991-b7a5-40f915ecec75"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""EquipItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""7bd57c9b-94f5-4cc3-badc-2e3f2632561f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DropItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c405e68-1124-494a-8d54-10f61aa0a23a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -253,6 +309,127 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""OpenInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e64547f-c747-4bd2-9671-326bbdaefc34"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""f06087be-975b-42c4-8f79-80653c901d3e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3649d697-7447-4798-88e6-2a6cf4b9f9e3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""404306f2-2f07-49eb-bd87-139a13e0a3ff"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7b3199bc-daf6-4f63-8602-a643c1f3f8c8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4f28f040-ac1b-450c-9ea1-fe0ee12ca836"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""4228543a-8c1e-4488-8e3b-0ce9adb296f4"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseTab"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fc385238-1f0f-4d9c-a50f-5d3098981488"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""03186892-3fa1-4c41-a37f-1904119afa9b"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2b5663d-49f7-48ca-94b1-d6c21cd32d28"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EquipItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc41a33a-a9de-45d5-8e6d-3b089d4f42dc"",
+                    ""path"": ""<Keyboard>/delete"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DropItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -265,11 +442,16 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
         m_Movement_Dodge = m_Movement.FindAction("Dodge", throwIfNotFound: true);
         m_Movement_Block = m_Movement.FindAction("Block", throwIfNotFound: true);
+        m_Movement_TakeItem = m_Movement.FindAction("TakeItem", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_CloseMenu = m_UI.FindAction("CloseMenu", throwIfNotFound: true);
         m_UI_OpenSettings = m_UI.FindAction("OpenSettings", throwIfNotFound: true);
         m_UI_OpenInventory = m_UI.FindAction("OpenInventory", throwIfNotFound: true);
+        m_UI_ChooseItem = m_UI.FindAction("ChooseItem", throwIfNotFound: true);
+        m_UI_ChooseTab = m_UI.FindAction("ChooseTab", throwIfNotFound: true);
+        m_UI_EquipItem = m_UI.FindAction("EquipItem", throwIfNotFound: true);
+        m_UI_DropItem = m_UI.FindAction("DropItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -335,6 +517,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_Jump;
     private readonly InputAction m_Movement_Dodge;
     private readonly InputAction m_Movement_Block;
+    private readonly InputAction m_Movement_TakeItem;
     public struct MovementActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -343,6 +526,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
         public InputAction @Dodge => m_Wrapper.m_Movement_Dodge;
         public InputAction @Block => m_Wrapper.m_Movement_Block;
+        public InputAction @TakeItem => m_Wrapper.m_Movement_TakeItem;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -364,6 +548,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Block.started += instance.OnBlock;
             @Block.performed += instance.OnBlock;
             @Block.canceled += instance.OnBlock;
+            @TakeItem.started += instance.OnTakeItem;
+            @TakeItem.performed += instance.OnTakeItem;
+            @TakeItem.canceled += instance.OnTakeItem;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -380,6 +567,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Block.started -= instance.OnBlock;
             @Block.performed -= instance.OnBlock;
             @Block.canceled -= instance.OnBlock;
+            @TakeItem.started -= instance.OnTakeItem;
+            @TakeItem.performed -= instance.OnTakeItem;
+            @TakeItem.canceled -= instance.OnTakeItem;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -404,6 +594,10 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_CloseMenu;
     private readonly InputAction m_UI_OpenSettings;
     private readonly InputAction m_UI_OpenInventory;
+    private readonly InputAction m_UI_ChooseItem;
+    private readonly InputAction m_UI_ChooseTab;
+    private readonly InputAction m_UI_EquipItem;
+    private readonly InputAction m_UI_DropItem;
     public struct UIActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -411,6 +605,10 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @CloseMenu => m_Wrapper.m_UI_CloseMenu;
         public InputAction @OpenSettings => m_Wrapper.m_UI_OpenSettings;
         public InputAction @OpenInventory => m_Wrapper.m_UI_OpenInventory;
+        public InputAction @ChooseItem => m_Wrapper.m_UI_ChooseItem;
+        public InputAction @ChooseTab => m_Wrapper.m_UI_ChooseTab;
+        public InputAction @EquipItem => m_Wrapper.m_UI_EquipItem;
+        public InputAction @DropItem => m_Wrapper.m_UI_DropItem;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -429,6 +627,18 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @OpenInventory.started += instance.OnOpenInventory;
             @OpenInventory.performed += instance.OnOpenInventory;
             @OpenInventory.canceled += instance.OnOpenInventory;
+            @ChooseItem.started += instance.OnChooseItem;
+            @ChooseItem.performed += instance.OnChooseItem;
+            @ChooseItem.canceled += instance.OnChooseItem;
+            @ChooseTab.started += instance.OnChooseTab;
+            @ChooseTab.performed += instance.OnChooseTab;
+            @ChooseTab.canceled += instance.OnChooseTab;
+            @EquipItem.started += instance.OnEquipItem;
+            @EquipItem.performed += instance.OnEquipItem;
+            @EquipItem.canceled += instance.OnEquipItem;
+            @DropItem.started += instance.OnDropItem;
+            @DropItem.performed += instance.OnDropItem;
+            @DropItem.canceled += instance.OnDropItem;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -442,6 +652,18 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @OpenInventory.started -= instance.OnOpenInventory;
             @OpenInventory.performed -= instance.OnOpenInventory;
             @OpenInventory.canceled -= instance.OnOpenInventory;
+            @ChooseItem.started -= instance.OnChooseItem;
+            @ChooseItem.performed -= instance.OnChooseItem;
+            @ChooseItem.canceled -= instance.OnChooseItem;
+            @ChooseTab.started -= instance.OnChooseTab;
+            @ChooseTab.performed -= instance.OnChooseTab;
+            @ChooseTab.canceled -= instance.OnChooseTab;
+            @EquipItem.started -= instance.OnEquipItem;
+            @EquipItem.performed -= instance.OnEquipItem;
+            @EquipItem.canceled -= instance.OnEquipItem;
+            @DropItem.started -= instance.OnDropItem;
+            @DropItem.performed -= instance.OnDropItem;
+            @DropItem.canceled -= instance.OnDropItem;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -465,11 +687,16 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnTakeItem(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnCloseMenu(InputAction.CallbackContext context);
         void OnOpenSettings(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
+        void OnChooseItem(InputAction.CallbackContext context);
+        void OnChooseTab(InputAction.CallbackContext context);
+        void OnEquipItem(InputAction.CallbackContext context);
+        void OnDropItem(InputAction.CallbackContext context);
     }
 }

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba0bac0382c0fd4a8e87c3eae6c6e87, type: 3}
   m_Name: New Heavy Armor
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
   Name: New Heavy Armor
+  Weight: 25
+  Discription: So heavy, but so strong
   BlockedDamagePercentage: 20
   MaxStrength: 100
   TimeToStrengthRestoration: 10000
