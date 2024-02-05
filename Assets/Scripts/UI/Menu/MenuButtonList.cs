@@ -14,16 +14,13 @@ public class MenuButtonList : MonoBehaviour
     private void Awake()
     {
         _inputActions = new PlayerInputSystem();
-        _inputActions.UI.ChooseTab.performed += ctx => ReadInput();
+        _inputActions.UI.ChooseTab.started += ctx => ReadInput();
     }
 
     private void ReadInput()
     {
         var input = _inputActions.UI.ChooseTab.ReadValue<float>();
-        if (input > 0)
-            _currentButtonIndex++;
-        else
-            _currentButtonIndex--;
+        _currentButtonIndex += input > 0 ? 1 : -1;
         SelectButton(_currentButtonIndex);
     }
 

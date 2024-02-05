@@ -69,6 +69,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""id"": ""2b6bde7c-99f7-4f72-9141-2600ceea3ec3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.05)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchTakeItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""362ba0ea-ea9a-4e3f-bf8e-89455d229d08"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 }
@@ -197,12 +206,34 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a97a1b9a-0181-4aed-b32b-97cc82665b0f"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8e66b4a7-f2b1-4a78-8d73-055d80a5c335"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""TakeItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adc0478a-d55e-44c5-b012-94baf1fc6410"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchTakeItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -270,6 +301,24 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""name"": ""DropItem"",
                     ""type"": ""Button"",
                     ""id"": ""9c405e68-1124-494a-8d54-10f61aa0a23a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch"",
+                    ""type"": ""Button"",
+                    ""id"": ""09a1a0e0-f8e5-4ad4-aab1-89800e8d640a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": "" Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ca9f2c9-8100-4b90-ba6a-4af386b7f373"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -430,6 +479,28 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""DropItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82dc8657-3b24-44f0-a05a-b450fce46f14"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0198a2a7-fcf2-43be-b868-acb7be04e0a3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": "" Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -443,6 +514,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_Movement_Dodge = m_Movement.FindAction("Dodge", throwIfNotFound: true);
         m_Movement_Block = m_Movement.FindAction("Block", throwIfNotFound: true);
         m_Movement_TakeItem = m_Movement.FindAction("TakeItem", throwIfNotFound: true);
+        m_Movement_SwitchTakeItem = m_Movement.FindAction("SwitchTakeItem", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_CloseMenu = m_UI.FindAction("CloseMenu", throwIfNotFound: true);
@@ -452,6 +524,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_UI_ChooseTab = m_UI.FindAction("ChooseTab", throwIfNotFound: true);
         m_UI_EquipItem = m_UI.FindAction("EquipItem", throwIfNotFound: true);
         m_UI_DropItem = m_UI.FindAction("DropItem", throwIfNotFound: true);
+        m_UI_Switch = m_UI.FindAction("Switch", throwIfNotFound: true);
+        m_UI_Accept = m_UI.FindAction(" Accept", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -518,6 +592,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_Dodge;
     private readonly InputAction m_Movement_Block;
     private readonly InputAction m_Movement_TakeItem;
+    private readonly InputAction m_Movement_SwitchTakeItem;
     public struct MovementActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -527,6 +602,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Dodge => m_Wrapper.m_Movement_Dodge;
         public InputAction @Block => m_Wrapper.m_Movement_Block;
         public InputAction @TakeItem => m_Wrapper.m_Movement_TakeItem;
+        public InputAction @SwitchTakeItem => m_Wrapper.m_Movement_SwitchTakeItem;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -551,6 +627,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @TakeItem.started += instance.OnTakeItem;
             @TakeItem.performed += instance.OnTakeItem;
             @TakeItem.canceled += instance.OnTakeItem;
+            @SwitchTakeItem.started += instance.OnSwitchTakeItem;
+            @SwitchTakeItem.performed += instance.OnSwitchTakeItem;
+            @SwitchTakeItem.canceled += instance.OnSwitchTakeItem;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -570,6 +649,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @TakeItem.started -= instance.OnTakeItem;
             @TakeItem.performed -= instance.OnTakeItem;
             @TakeItem.canceled -= instance.OnTakeItem;
+            @SwitchTakeItem.started -= instance.OnSwitchTakeItem;
+            @SwitchTakeItem.performed -= instance.OnSwitchTakeItem;
+            @SwitchTakeItem.canceled -= instance.OnSwitchTakeItem;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -598,6 +680,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_ChooseTab;
     private readonly InputAction m_UI_EquipItem;
     private readonly InputAction m_UI_DropItem;
+    private readonly InputAction m_UI_Switch;
+    private readonly InputAction m_UI_Accept;
     public struct UIActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -609,6 +693,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @ChooseTab => m_Wrapper.m_UI_ChooseTab;
         public InputAction @EquipItem => m_Wrapper.m_UI_EquipItem;
         public InputAction @DropItem => m_Wrapper.m_UI_DropItem;
+        public InputAction @Switch => m_Wrapper.m_UI_Switch;
+        public InputAction @Accept => m_Wrapper.m_UI_Accept;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -639,6 +725,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DropItem.started += instance.OnDropItem;
             @DropItem.performed += instance.OnDropItem;
             @DropItem.canceled += instance.OnDropItem;
+            @Switch.started += instance.OnSwitch;
+            @Switch.performed += instance.OnSwitch;
+            @Switch.canceled += instance.OnSwitch;
+            @Accept.started += instance.OnAccept;
+            @Accept.performed += instance.OnAccept;
+            @Accept.canceled += instance.OnAccept;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -664,6 +756,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DropItem.started -= instance.OnDropItem;
             @DropItem.performed -= instance.OnDropItem;
             @DropItem.canceled -= instance.OnDropItem;
+            @Switch.started -= instance.OnSwitch;
+            @Switch.performed -= instance.OnSwitch;
+            @Switch.canceled -= instance.OnSwitch;
+            @Accept.started -= instance.OnAccept;
+            @Accept.performed -= instance.OnAccept;
+            @Accept.canceled -= instance.OnAccept;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -688,6 +786,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
         void OnTakeItem(InputAction.CallbackContext context);
+        void OnSwitchTakeItem(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -698,5 +797,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnChooseTab(InputAction.CallbackContext context);
         void OnEquipItem(InputAction.CallbackContext context);
         void OnDropItem(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
+        void OnAccept(InputAction.CallbackContext context);
     }
 }

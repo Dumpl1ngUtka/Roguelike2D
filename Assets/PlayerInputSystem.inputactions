@@ -47,6 +47,15 @@
                     "id": "2b6bde7c-99f7-4f72-9141-2600ceea3ec3",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Hold(duration=0.05)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchTakeItem",
+                    "type": "Button",
+                    "id": "362ba0ea-ea9a-4e3f-bf8e-89455d229d08",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -175,12 +184,34 @@
                 },
                 {
                     "name": "",
+                    "id": "a97a1b9a-0181-4aed-b32b-97cc82665b0f",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8e66b4a7-f2b1-4a78-8d73-055d80a5c335",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "TakeItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "adc0478a-d55e-44c5-b012-94baf1fc6410",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchTakeItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -248,6 +279,24 @@
                     "name": "DropItem",
                     "type": "Button",
                     "id": "9c405e68-1124-494a-8d54-10f61aa0a23a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "09a1a0e0-f8e5-4ad4-aab1-89800e8d640a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": " Accept",
+                    "type": "Button",
+                    "id": "6ca9f2c9-8100-4b90-ba6a-4af386b7f373",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -406,6 +455,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "DropItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82dc8657-3b24-44f0-a05a-b450fce46f14",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0198a2a7-fcf2-43be-b868-acb7be04e0a3",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": " Accept",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

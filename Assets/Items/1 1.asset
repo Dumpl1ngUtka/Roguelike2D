@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f84a475f29d064fb6a9b6d250697e3, type: 3}
-  m_Name: Shield1
+  m_Script: {fileID: 11500000, guid: 5994233751f01864388501df7a0773db, type: 3}
+  m_Name: 1 1
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 6cc5103edc9f0dd4f80e8274c73dfeac, type: 3}
-  Name: Shield
-  Description: 
+  Icon: {fileID: 21300000, guid: 3168140d6f409d0448447f18568d9482, type: 3}
+  Name: 2
+  Description: dsadasdasda1

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private MenuController _menu;
+
     public PlayerParameters Parameters;
     public LayerMask GroundLayer;
     public Condition MoveCondition;
@@ -17,7 +19,6 @@ public class Player : MonoBehaviour
         Block,
     }
 
-    [SerializeField] private MenuController _menu;
     private void Awake()
     {
         InputSystem = new PlayerInputSystem();
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator OpenMenu(MenuController.OpenType type)
+    public IEnumerator OpenMenu(MenuController.OpenType type)
     {
         InputSystem.Disable();
         _menu.Open(type);

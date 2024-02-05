@@ -11,7 +11,7 @@ public class InventoryItemInfo : MonoBehaviour
     public void Render(Item item)
     {
         _name.text = item.Name;
-        _description.text = item.Discription;
+        _description.text = item.Description;
         _icon.sprite = item.Icon;
     }
 }

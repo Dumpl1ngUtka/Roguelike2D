@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97641bcf5a19ad740b6b44794861af8a, type: 3}
   m_Name: LightArmor
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 5524250004244287280, guid: 6e22e853b8a88c142b080b3fab27caed, type: 3}
   Name: Light Armor
-  Weight: 15
-  Discription: Armor for light warriors
+  Description: 
   BlockedDamagePercentage: 5
   MaxStrength: 10
   TimeToStrengthRestoration: 5

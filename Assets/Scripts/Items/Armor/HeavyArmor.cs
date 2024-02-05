@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item/Armor/LightArmor")]
+[CreateAssetMenu(menuName = "Item/Armor/HeavyArmor")]
 public class HeavyArmor : Armor
 {
     public override float ConvertDamage(float defaultDamage)

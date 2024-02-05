@@ -1,25 +1,35 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryCell : MonoBehaviour
 {
     [SerializeField] private Image _icon;
-    [SerializeField] private TMP_Text _weight;
     [SerializeField] private Image _selectBox;
-    public Item Item { get; private set; }
-    public int ItemID { get; private set; }
-
-    public void Render(Item item, int itemID)
+    [SerializeField] private Image _switchBox;
+    public int ItemID {get; private set;}
+    public Item[] ItemsCollection { get; private set; }
+    public Item Item
     {
-        Item = item;
+        get {return ItemsCollection?[ItemID];}
+    }
+
+    public void Init(Item[] itemsCollection, int itemID)
+    {
         ItemID = itemID;
-        _icon.sprite = item.Icon;
-        _weight.text = item.Weight.ToString();
+        ItemsCollection = itemsCollection;
+    }
+
+    public void Render()
+    {
+        _icon.sprite = Item != null? Item.Icon : default;
     }
 
     public void Select(bool isSelect)
     {
         _selectBox.gameObject.SetActive(isSelect);
+    }
+    public void Switch(bool isSwitch)
+    {
+        _switchBox.gameObject.SetActive(isSwitch);
     }
 }

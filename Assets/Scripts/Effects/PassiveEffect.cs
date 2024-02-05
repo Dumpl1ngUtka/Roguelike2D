@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PassiveEffects
 {
-    public abstract class PassiveEffect : MonoBehaviour
+    public abstract class PassiveEffect
     {
         public string Name;
         public string Description;
